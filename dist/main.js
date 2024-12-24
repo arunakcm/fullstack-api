@@ -8,6 +8,7 @@ async function bootstrap() {
     app.setGlobalPrefix('api');
     app.useGlobalPipes(new common_1.ValidationPipe());
     app.enableCors();
+    console.log(`Server is runing on port: ${process.env.PORT}`);
     await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
