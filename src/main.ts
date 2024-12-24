@@ -7,6 +7,7 @@ async function bootstrap() {
   // Enable global validation using class-validator
   // app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix('api');
+  // app.setGlobalPrefix(new ValidationPipe('api'));
   app.enableCors();
   await app.listen(process.env.PORT ?? 3000);
 }
