@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,12 +8,12 @@ datasource db {
 }
 
 model Menu {
-  id        String   @id @default(uuid()) // Unique ID for each menu item
-  name      String   // Menu name
-  parentId  String?  // Nullable: references the parent menu item
+  id        String   @id @default(uuid())
+  name      String
+  parentId  String?
   depth     Int
-  parent    Menu?    @relation("MenuParent", fields: [parentId], references: [id])
-  children  Menu[]   @relation("MenuParent") // Self-referencing relationship for children
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  parent    Menu?    @relation("MenuParent", fields: [parentId], references: [id])
+  children  Menu[]   @relation("MenuParent")
 }
