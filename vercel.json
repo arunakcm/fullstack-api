@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "build": {
+    "outputDirectory": ".vercel/output"
+    },
+    "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/main.js"
+    }
+    ]
+  }
