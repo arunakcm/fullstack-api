@@ -1,18 +1,15 @@
 {
     "version": 2,
-    "env": {
-        "DATABASE_URL": "postgresql://admin:_azgpQeq2pxKFcw8l4SHqF0u_UlK1-@ap-south-1.9575fc1d-cd85-4f8c-8a1b-89a65a7e390e.aws.yugabyte.cloud:5433/postgres?schema=menu?sslmode=require"
-    },
     "builds": [
         {
-            "src": "src/main.ts",
+            "src": "./main.ts",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "src/main.ts",
+            "dest": "./main.ts",
             "methods": [
                 "GET",
                 "POST",
